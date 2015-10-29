@@ -1,0 +1,13 @@
+h1{
+    font-size: 16px;
+}
+
+.message{
+    width:40%;
+    height:35px;
+    background-color: #ccc;
+}
+
+.errorlist{
+    color:red;
+}

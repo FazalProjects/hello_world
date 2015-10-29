@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'member/style.css' %}" />
+</head>
+<body>
+    <h1>Add Member</h1>
+    [ <a href="/">Home</a> | <a href="{% url 'member_api' %}">API</a> ]<br />
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+    
+    <form action="{% url 'member_save' %}" method="post">
+        {% csrf_token %}
+        {{ form }}<br />
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>

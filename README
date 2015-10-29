@@ -2,3 +2,14 @@ Sample Django Project
   - Python 3.4
   - Django 1.8.5
 
+> Build a simple Hello World kind of django project:
+>
+> - home page should have a form that asks for a name
+> - on POST, the name should be saved in a database together with the date/time it was added, then redirect to...
+> - a view that displays "Hello, <submitted name>"
+> - activate the django admin and make the names listed with the date/time it was added
+> - create a RESTful webservice API endpoint for returning the submitted names in JSON format (you can use django-rest-framework)
+> - the API endpoint should be protected by an authorization token
+> - the project should be committed to a git repository
+>
+> Make sure to use the appropriate django modules, and use the best features of django that you know.  For this exercise, I want to see how you layout your project, how you configure django, and how you write your code.  I will also check how your project evolves via the git commits so make sure you don't have only one commit with everything in the git repository.
