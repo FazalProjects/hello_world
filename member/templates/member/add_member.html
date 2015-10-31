@@ -1,14 +1,14 @@
 {% extends "member/base.html" %}
 {% block content %}
-    <h1>Add Member</h1>
-    {% if message %}
-        <div class="message">{{ message }}</div>
-    {% endif %}
     
-    <form action="{% url 'member_save' %}" method="post">
-        {% csrf_token %}
-        {{ form }}<br />
-        <input type="submit" value="Save Name" />
-    </form>
-
+    <div class="formblock">
+        <h1>Add Member</h1>
+        {% if message %}
+            <div class="message">{{ message }}</div>
+        {% endif %}
+        <form action="{% url 'member_save' %}" method="post">
+            {% csrf_token %}
+            {{ form }}<input type="submit" value="Save Name" />
+        </form>
+    </div>
 {% endblock %}
