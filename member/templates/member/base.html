@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Name site{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'member/style.css' %}" />
+        <script type="application/javascript" src="{% static 'member/jquery-1.11.3.min.js' %}" />
+        <script type="application/javascript" src="{% static 'member/script.js' %}" />
+    </head>
+    <body>
+        <div id="sidebar">
+            {% block sidebar %}
+            [ <a href="/">Home</a> | 
+              <a href="{% url 'member_api' %}" target="_blank">API</a> | 
+              {% if user.is_anonymous %}
+                  <a href="{% url 'django.contrib.auth.views.login' %}?next=/">login</a>
+              {% else %}
+                  '{{ user }}' - <a href="{% url 'django.contrib.auth.views.logout' %}?next=/">logout</a>
+              {% endif %}
+            ]<br />
+            <form method="POST" action="/member/api-token-auth/">
+                {% csrf_token %}
+                <input type="hidden" name="username" value="admin" />
+                <input type="hidden" name="password" value="admin" />
+                <input type="submit" name="API Validate" value="API Validate" />
+            </form>
+            {% endblock %}
+        </div>
+        <div id="content">
+            {% block content %} {% endblock %}
+        </div>
+    </body>
+</html>

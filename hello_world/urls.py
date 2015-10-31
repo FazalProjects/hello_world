@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from member import views as member_views
 
 
 urlpatterns = [
     url(r'^$', 'member.views.member_add', name='home'),
     url(r'^member/', include('member.urls')),
+    url(r'^login/$', 'django.contrib.auth.views.login'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout'),
     url(r'^admin/', include(admin.site.urls)),
 ]

@@ -2,6 +2,10 @@ Sample Django Project
   - Python 3.4
   - Django 1.8.5
 
+pip install djangorestframework
+
+
+-------------------------------------------------------------------------------------------------------------------
 > Build a simple Hello World kind of django project:
 >
 > - home page should have a form that asks for a name
@@ -13,3 +17,4 @@ Sample Django Project
 > - the project should be committed to a git repository
 >
 > Make sure to use the appropriate django modules, and use the best features of django that you know.  For this exercise, I want to see how you layout your project, how you configure django, and how you write your code.  I will also check how your project evolves via the git commits so make sure you don't have only one commit with everything in the git repository.
+-------------------------------------------------------------------------------------------------------------------
